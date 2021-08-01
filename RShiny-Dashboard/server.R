@@ -1,6 +1,18 @@
 shinyServer(function(input,output,session){
-
   
+  # FIRST FILL IN YOUR API KEY IN api_key.R
+  # NOW YOU NEED TO DO ANOTHER API CALL THAT IS NOT IN THE ACTIVE CODE TO BE ABLE TO FILL IN YOU VARIABLE ID IN link_values on line 27
+  # first run:
+  # source('libraries.R');source('api_key.R')
+  # then run lines '21-26'
+  # then the next 5 lines:
+  # link_variables <- 'variables/'
+  # r_variables <- GET(paste0(link,link_variables),add_headers('X-Auth-Token' = token))
+  # data_variables <- fromJSON(rawToChar(r_variables$content))
+  # df_variables <- data.frame(data_variables$results)[1:2]
+  # view(df_variables)
+  # now fill in the right id in line 28
+
   #############
   # FUNCTIONS #
   #############
@@ -12,13 +24,6 @@ shinyServer(function(input,output,session){
     r_token <- POST(paste0(link,link_token),
                     add_headers('x-ubidots-apikey' = ubidots_api_key))  # FILL IN YOUR API KEY IN api_key.R
     token <- content(r_token)$token
-    
-    # DO THIS API CALL FIRST AND THEN FILL IN THE RIGHT ID VALUE INSTEAD OF XXXXX IN link_values
-    # link_variables <- 'variables/'
-    # r_variables <- GET(paste0(link,link_variables),add_headers('X-Auth-Token' = token))
-    # data_variables <- fromJSON(rawToChar(r_variables$content))
-    # df_variables <- data.frame(data_variables$results)[1:2]
-    # view(df_variables)
     
     link_values <- 'variables/XXXXX/values?page_size=200' 
     
