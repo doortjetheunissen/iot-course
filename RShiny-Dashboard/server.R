@@ -1,7 +1,7 @@
 shinyServer(function(input,output,session){
   
   # FIRST FILL IN YOUR API KEY IN api_key.R
-  # NOW YOU NEED TO DO ANOTHER API CALL THAT IS NOT IN THE ACTIVE CODE TO BE ABLE TO FILL IN YOU VARIABLE ID IN link_values on line 27
+  # NOW YOU NEED TO DO THE FOLLOWING API CALL TO BE ABLE TO FILL IN YOU VARIABLE ID IN link_values on line 27
   # first run:
   # source('libraries.R');source('api_key.R')
   # then run lines '21-26'
